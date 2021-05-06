@@ -1,0 +1,46 @@
+#include "lcdutils.h"
+	.arch msp430g2553
+
+	.p2align 1,0
+	.data
+
+jt:
+	.word default
+	.word case1
+	.word case2
+	.word case3
+	.word case4
+
+	.text
+	.global state_advance
+
+state_advance:
+	cmp #5, r12
+	jc default
+	add r12, r12
+	mov jt(r12),r0
+
+case1:
+	mov #75, r12
+	mov #40, r13
+	mov 0x2b4a, r14
+	call #myShape
+	jmp end
+
+case2:
+	
+	jmp end
+
+case3:
+	 
+	jmp end
+
+case4:
+	 
+	jmp end
+
+default:
+	jmp end
+
+end:
+	ret

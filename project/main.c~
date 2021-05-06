@@ -1,0 +1,26 @@
+#include <msp430.h>
+#include "timerLib/libTimer.h"
+#include "led.h"
+#include "switches.h"
+#include "buzzer.h"
+#include "lcdutils.h"
+#include "lcddraw.h"
+
+void main(void)
+{
+  configureClocks();
+  switch_init();
+  //buzzer_init();
+  //led_init();
+  enableWDTInterrupts();
+
+  or_sr(0x08);
+  
+  lcd_init();
+  clearScreen(COLOR_DARK_OLIVE_GREEN);
+  drawString5x7(10,20, "The Legend of Zelda", COLOR_YELLOW, COLOR_DARK_OLIVE_GREEN);
+  myShape(75,40,COLOR_YELLOW);
+  
+  
+  or_sr(0x10);  // CPU off, GIE on
+} 
