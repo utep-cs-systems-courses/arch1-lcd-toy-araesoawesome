@@ -144,29 +144,33 @@ void myShape(int offset_r, int offset_c, u_int color){
 }
 
 void myShapeMoveLeft(){
-  for(int i = 40; i >= 5; i -= 5){
+  for(int i = 40; i >= 20; i -= 5){
     myShape(75,i,COLOR_DARK_OLIVE_GREEN);
     myShape(75,i-5,COLOR_YELLOW);
+    myShape(75,i-5,COLOR_DARK_OLIVE_GREEN);
   } 
 }
 
 void myShapeMoveUp(){
-  for(int i = 75; i >= 5; i -= 5){
+  for(int i = 75; i >= 15; i -= 5){
     myShape(i,40,COLOR_DARK_OLIVE_GREEN);
     myShape(i-5,40,COLOR_YELLOW);
+    myShape(i-5,40,COLOR_DARK_OLIVE_GREEN);
   }
 }
 
 void myShapeMoveDown(){
-  for(int i = 75; i <= 145 ; i += 5){
+  for(int i = 75; i <= 135 ; i += 5){
     myShape(i,40,COLOR_DARK_OLIVE_GREEN);
     myShape(i+5,40,COLOR_YELLOW);
+    myShape(i+5,40,COLOR_DARK_OLIVE_GREEN);
   }
 }
 
 void myShapeMoveRight(){
-  for(int i = 40; i <= 75; i += 5){
+  for(int i = 40; i <= 65; i += 5){
     myShape(75,i,COLOR_DARK_OLIVE_GREEN);
     myShape(75,i+5,COLOR_YELLOW);
+    myShape(75,i+5,COLOR_DARK_OLIVE_GREEN);
   }
 }

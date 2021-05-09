@@ -5,6 +5,7 @@
 #include "stateAssembly.h"
 
 char switch_state_down, switch_state_changed; /* effectively boolean */
+int redrawScreen;
 
 static char
 switch_update_interrupt_sense()
